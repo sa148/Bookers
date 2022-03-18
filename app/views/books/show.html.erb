@@ -1,2 +1,15 @@
-<h1>Books#show</h1>
-<p>Find me in app/views/books/show.html.erb</p>
+<p id="notice"></p>
+<p>
+  <strong>Title:</strong>
+</p>
+<p><%= @book.title %></p>
+
+<p>
+  <strong>Body:</strong>
+</p>
+<p><%= @book.body %></p>
+<a class="edit_59182" href="/books/59182/edit">Edit</a>
+"|"
+<a class="back" href="/books">Back</a>
+<%= book_to "編集", edit_book_path(@book.id) %>
+<%= link_to "削除", destroy_list_path(@list.id), method: :delete, "data-confirm" => "本当に削除しますか？" %>
