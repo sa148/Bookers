@@ -1,15 +1,2 @@
 <p id="notice">Book was successfully created.</p>
 <%= form_with model: Book.new do |f| %>
-  <p>
-  <strong>Title:</strong>
-  </p>
-  <%= f.text_field :title %>
-  <p>
-  <strong>Body:</strong>
-  </p>
-  <% f.text_field :title%>
-  <a class="edit_59173" href="/books/59173/edit">Edit</a>
-  "|"
-  <a class="back" href="/books">Back</a>
-  <%= f.submit '投稿' %>
-<% end %>
