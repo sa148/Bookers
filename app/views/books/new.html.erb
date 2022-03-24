@@ -1,2 +1,10 @@
-<p id="notice">Book was successfully created.</p>
+<div class="notice">Book was successfully created.</div>
 <%= form_with model: Book.new do |f| %>
+<% if @book.errors.any? %>
+  <%= @book.errors.count %>件のエラーが発生しました
+  <ul>
+    <% @book.errors.full_messages.each do |message| %>
+      <li><%= message %></li>
+    <% end %>
+  </ul>
+<% end %>

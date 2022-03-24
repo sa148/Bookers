@@ -1,21 +1,24 @@
+<p id="notice">Book was successfully updated.</p>
 <h1>Editing Book</h1>
-<form class="edit_book" id="edit_book_59181" action="/books/59181" accept-charset="UTF-8" method="post"><input name="utf8" type="hidden" value="✓"><input type="hidden" name="_method" value="patch"><input type="hidden" name="authenticity_token" value="RVo8uIXBtUC0bGVuOcIYMJvfBxJiC94ohFhRCt4y/WKsNgX4ZtHrx1bjrNdkOd8B5fo9x51zD3o2SW3AN6NIKA==">
-
-  <div class="field">
-    <label for="book_title">Title</label>
-    <input class="book_title" type="text" value="d" name="book[title]" id="book_title">
-  </div>
-
-  <div class="field">
-    <label for="book_body">Body</label>
-    <textarea class="book_body" name="book[body]" id="book_body">d</textarea>
-  </div>
-
-  <div class="actions">
-    <input type="submit" name="commit" value="Update Book" data-disable-with="Update Book">
-  </div>
-</form>
-
-<a class="show_59181" href="/books/59181">Show</a>
-"|"
-<a class="back" href="/books">Back</a>
+<%= form_with model: Book do |f| %>
+<p>
+  <strong>Title</strong>
+</p>
+  <p>
+  <%= f.text_field :title %>
+  </p>
+<p>
+  <strong>Body</strong>
+</p>
+ <p>
+  <%= f.text_area :body %>
+  </p>
+  <p>
+  <%= f.submit 'Update Book' %>
+  </p>
+<span>
+  <%= link_to "Show", book_path(@book.id)%>
+</span>
+|
+  <%= link_to "Back", books_path(@book.id)%>
+<% end %>
