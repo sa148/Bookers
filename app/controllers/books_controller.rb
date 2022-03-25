@@ -12,7 +12,6 @@ class BooksController < ApplicationController
     end
     if @book.save
       flash[:alert] = "Book was successfully created."
-      redirect_to book_path(@book.id)
     end
   end
 
@@ -28,6 +27,7 @@ class BooksController < ApplicationController
   def destroy
     book = Book.find(params[:id])
     book.destroy
+    flash[:alert] = "Book was successfully destroyed."
     redirect_to '/books'
   end
 

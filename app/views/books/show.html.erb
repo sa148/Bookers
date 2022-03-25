@@ -1,13 +1,12 @@
+<div class="field">
+  <laber for="book_title">Title:</laber>
+  <%= @book.title %>
+</div>
+<div class="field">
+  <laber for="book_body">Body:</laber>
+  <%= @book.body %>
+</div>
 
-<p>
-  <strong>Title:</strong>
-</p>
-<p><%= @book.title %></p>
-
-<p>
-  <strong>Body</strong>
-</p>
-<p><%= @book.body %></p>
 <span>
   <%= link_to "Edit", edit_book_path(@book.id)%>
 </span>

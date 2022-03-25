@@ -1,18 +1,14 @@
-<p id="notice">Book was successfully updated.</p>
+
 <h1>Editing Book</h1>
 <%= form_with model: Book do |f| %>
-<p>
-  <strong>Title</strong>
-</p>
-  <p>
+<div class="field">
+  <laber for="book_title">Title</laber>
   <%= f.text_field :title %>
-  </p>
-<p>
-  <strong>Body</strong>
-</p>
- <p>
-  <%= f.text_area :body %>
-  </p>
+</div>
+<div class="field">
+  <laber for="book_body">Body</laber>
+  <%= f.text_field :body %>
+</div>
   <p>
   <%= f.submit 'Update Book' %>
   </p>
